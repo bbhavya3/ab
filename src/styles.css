@@ -615,15 +615,13 @@ footer{
    FINAL
 ========================= */
 
-.end{
+.end img{
   position:absolute;
   inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#09070a;
-  text-align:center;
-  animation:appear .8s both;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 20%;
 }
 
 .end>img{
@@ -2694,6 +2692,456 @@ footer{
     height: 100%;
     object-fit: cover;
     object-position: center center;
+  }
+
+}
+/* =========================================================
+   MOBILE CINEMATIC FIX
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  /* Remove Android / Chrome tap flash */
+  html,
+  body,
+  #root,
+  .movie,
+  .movie * {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+  }
+
+  .movie {
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+    position: fixed;
+    inset: 0;
+    background: #090708;
+  }
+
+
+  /* =========================================
+     EVERY STORY SCENE
+     ========================================= */
+
+  .story {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+
+    overflow: hidden !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: block !important;
+
+    background: #090708;
+  }
+
+
+  /* Image container */
+
+  .story .bg {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #090708;
+  }
+
+
+  /* Actual scene image */
+
+  .story .bg img {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+    object-position: center center !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    transform: none !important;
+  }
+
+
+  /* Dark cinematic overlay */
+
+  .story .wash {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    pointer-events: none !important;
+
+    z-index: 2;
+  }
+
+
+  /* Caption stays over the image */
+
+  .story .copy {
+    position: absolute !important;
+
+    left: 24px !important;
+    right: 24px !important;
+    bottom: 105px !important;
+
+    width: auto !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    z-index: 4;
+  }
+
+
+  .story .copy small {
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+
+
+  .story .copy h1 {
+    font-size: clamp(30px, 9vw, 46px) !important;
+    line-height: 1.02 !important;
+
+    margin: 8px 0 12px !important;
+  }
+
+
+  .story .copy p {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+
+    max-width: 100% !important;
+
+    margin: 0 !important;
+  }
+
+
+  /* Header */
+
+  .movie header {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    height: 70px !important;
+
+    padding:
+      18px
+      16px
+      0 !important;
+
+    z-index: 20 !important;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(5,4,5,.72),
+      transparent
+    ) !important;
+  }
+
+
+  .movie header > span {
+    font-size: 9px !important;
+    letter-spacing: 2px !important;
+  }
+
+
+  .movie header .tools {
+    gap: 7px !important;
+  }
+
+
+  .movie header button {
+    font-size: 8px !important;
+    padding: 8px 11px !important;
+  }
+
+
+  /* Footer */
+
+  .movie footer {
+    position: fixed !important;
+
+    left: 16px !important;
+    right: 16px !important;
+    bottom: 14px !important;
+
+    z-index: 20 !important;
+  }
+
+
+  .movie footer span {
+    font-size: 8px !important;
+    letter-spacing: 1.5px !important;
+  }
+
+
+  /* =========================================
+     LAST SCENE
+     SAME FIT AS OTHER SCENES
+     ========================================= */
+
+  .last-story {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100vw !important;
+    height: 100dvh !important;
+
+    overflow: hidden !important;
+  }
+
+
+  .last-story .bg {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+
+  .last-story .bg img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center center !important;
+
+    display: block !important;
+  }
+
+
+  /* =========================================
+     REAL PHOTOS
+     ========================================= */
+
+  .photos {
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+
+    padding:
+      82px
+      18px
+      70px !important;
+
+    overflow: hidden !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+
+  .photos > small {
+    flex-shrink: 0;
+    font-size: 9px !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 12px !important;
+  }
+
+
+  .realcard {
+    width: 88vw !important;
+    max-width: 88vw !important;
+
+    height: 58dvh !important;
+    max-height: 58dvh !important;
+
+    padding: 8px !important;
+
+    margin: 0 !important;
+
+    flex-shrink: 0 !important;
+
+    overflow: hidden !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    transform: none !important;
+  }
+
+
+  .realcard > img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    display: block !important;
+  }
+
+
+  .photos h2 {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+
+    margin:
+      14px 8px
+      0 !important;
+
+    max-width: 90vw !important;
+  }
+
+
+  /* Remove ALL numbers */
+
+  .scene-no,
+  .count {
+    display: none !important;
+  }
+
+}
+/* =====================================================
+   SCENE 11 - FINAL IMAGE
+   ===================================================== */
+
+.last-image-only {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #090708;
+}
+
+.last-image-only img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+/* PHONE */
+
+@media (max-width: 700px) {
+
+  .last-image-only {
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+  }
+
+  .last-image-only img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+}
+/* ===== FINAL PAGE TEXT — EXACT CENTER ===== */
+
+.end > div {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  width: 90vw !important;
+  max-width: 1100px !important;
+
+  margin: 0 !important;
+  padding: 20px !important;
+
+  box-sizing: border-box !important;
+
+  text-align: center !important;
+
+  z-index: 10 !important;
+}
+
+.end > div small,
+.end > div h1,
+.end > div strong,
+.end > div p {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Desktop */
+.end > div h1 {
+  margin-top: 15px !important;
+  margin-bottom: 30px !important;
+}
+
+/* Phone */
+@media (max-width: 700px) {
+
+  .end > div {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+
+    width: 92vw !important;
+    max-width: 92vw !important;
+
+    padding: 15px !important;
   }
 
 }

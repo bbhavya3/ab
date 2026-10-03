@@ -1,100 +1,108 @@
-import React,{useEffect,useState} from "react";
-import {createRoot} from "react-dom/client";
+import React, { useEffect, useState } from "react";
+import { createRoot } from "react-dom/client";
 import "./styles.css";
 
 
-const scenes=[
+/* =====================================================
+   STORY DATA
+   ===================================================== */
+
+const scenes = [
   {
-    img:"01-instagram.png",
-    date:"04 OCTOBER 2022",
-    title:"It started with a follow.",
-    cap:"Do you remember how it all started? Just one Instagram follow… I never imagined that the boy I started talking to would become such an important part of my life.",
-    motion:"kenburn"
+    img: "01-instagram.png",
+    date: "04 OCTOBER 2022",
+    title: "It started with a follow.",
+    cap: "Do you remember how it all started? Just one Instagram follow… I never imagined that the boy I started talking to would become such an important part of my life.",
+    motion: "kenburn"
   },
 
   {
-    img:"02-talking.png",
-    date:"THEN",
-    title:"A few messages became a habit.",
-    cap:"At first, you were just my friend. But somehow, our conversations kept getting longer… and talking to you slowly became a part of my everyday life.",
-    motion:"float"
+    img: "02-talking.png",
+    date: "THEN",
+    title: "A few messages became a habit.",
+    cap: "At first, you were just my friend. But somehow, our conversations kept getting longer… and talking to you slowly became a part of my everyday life.",
+    motion: "float"
   },
 
   {
-    img:"03-btech.png",
-    date:"A NEW CHAPTER",
-    title:"Then I entered B.Tech.",
-    cap:"Then I entered B.Tech, and somehow you became even more important to me. Between classes, messages and all those little moments, we were slowly getting closer.",
-    motion:"pan"
+    img: "03-btech.png",
+    date: "A NEW CHAPTER",
+    title: "Then I entered B.Tech.",
+    cap: "Then I entered B.Tech, and somehow you became even more important to me. Between classes, messages and all those little moments, we were slowly getting closer.",
+    motion: "pan"
   },
 
   {
-    img:"04-midnight.png",
-    date:"12:00 AM → 2:00 AM",
-    title:"Midnight was never really late.",
-    cap:"Do you remember all those late-night conversations? We would say 'just five more minutes' and suddenly it would be 2 AM. Those nights are some of my favourite memories with you.",
-    motion:"zoom"
+    img: "04-midnight.png",
+    date: "12:00 AM → 2:00 AM",
+    title: "Midnight was never really late.",
+    cap: "Do you remember all those late-night conversations? We would say 'just five more minutes' and suddenly it would be 2 AM. Those nights are some of my favourite memories with you.",
+    motion: "zoom"
   },
 
   {
-    img:"05-love-starts.png",
-    date:"04 OCTOBER 2024 • COLLEGE FEST",
-    title:"That was when friendship became love.",
-    cap:"And then came this day… 04 October 2024. Nothing dramatic, no big proposal. Somewhere in that beautiful day, I just realised that what I felt for you was no longer just friendship. It was love.",
-    motion:"drift"
+    img: "05-love-starts.png",
+    date: "04 OCTOBER 2024 • COLLEGE FEST",
+    title: "That was when friendship became love.",
+    cap: "And then came this day… 04 October 2024. Nothing dramatic, no big proposal. Somewhere in that beautiful day, I just realised that what I felt for you was no longer just friendship. It was love.",
+    motion: "drift"
   },
 
   {
-    img:"06-temple.png",
-    date:"DURGAMMA TEMPLE",
-    title:"A little blessing.",
-    cap:"I still remember this moment. Standing in front of Ammavaru, when you put that little bottu on my forehead… it felt like one of those moments I would remember forever.",
-    motion:"temple"
+    img: "06-temple.png",
+    date: "DURGAMMA TEMPLE",
+    title: "A little blessing.",
+    cap: "I still remember this moment. Standing in front of Ammavaru, when you put that little bottu on my forehead… it felt like one of those moments I would remember forever.",
+    motion: "temple"
   },
 
   {
-    img:"07-fights.png",
-    date:"REAL LOVE ISN’T ALWAYS EASY",
-    title:"We fought too.",
-    cap:"Of course, we weren't perfect. We fought, misunderstood each other and sometimes said things we didn't mean. But even when I was angry with you, my heart never really stopped caring.",
-    motion:"shake"
+    img: "07-fights.png",
+    date: "REAL LOVE ISN’T ALWAYS EASY",
+    title: "We fought too.",
+    cap: "Of course, we weren't perfect. We fought, misunderstood each other and sometimes said things we didn't mean. But even when I was angry with you, my heart never really stopped caring.",
+    motion: "shake"
   },
 
   {
-    img:"08-tears.png",
-    date:"SOME DAYS HURT",
-    title:"And sometimes, I cried.",
-    cap:"There were days when I cried because of us. Days when everything felt too much. But somewhere inside, I still hoped that we would find our way back to each other.",
-    motion:"soft"
+    img: "08-tears.png",
+    date: "SOME DAYS HURT",
+    title: "And sometimes, I cried.",
+    cap: "There were days when I cried because of us. Days when everything felt too much. But somewhere inside, I still hoped that we would find our way back to each other.",
+    motion: "soft"
   },
 
   {
-    img:"09-comfort.png",
-    date:"AND THEN",
-    title:"You came to comfort me.",
-    cap:"And then you came back to me. Sometimes you didn't need the perfect words… just having you there was enough to make everything feel a little better.",
-    motion:"rise"
+    img: "09-comfort.png",
+    date: "AND THEN",
+    title: "You came to comfort me.",
+    cap: "And then you came back to me. Sometimes you didn't need the perfect words… just having you there was enough to make everything feel a little better.",
+    motion: "rise"
   },
 
   {
-    img:"10-way-back.png",
-    date:"AFTER EVERY FIGHT",
-    title:"We always find our way back.",
-    cap:"Maybe that's what makes us us. No matter how many times we fight or get hurt, somehow we always find our way back to each other.",
-    motion:"warm"
+    img: "10-way-back.png",
+    date: "AFTER EVERY FIGHT",
+    title: "We always find our way back.",
+    cap: "Maybe that's what makes us us. No matter how many times we fight or get hurt, somehow we always find our way back to each other.",
+    motion: "warm"
   },
 
-  {
-    img:"11-final-moments.png",
-    date:"EVERY CHAPTER",
-    title:"And somehow, it is still us.",
-    cap:"And look at us now… from one Instagram follow to all these memories, we have grown, changed and loved each other through so many chapters. And honestly, I wouldn't want to rewrite a single one.",
-    motion:"final"
-  }
+ {
+  img: "11-final-moments.png",
+  date: "EVERY CHAPTER",
+  title: "And somehow, it is still us.",
+  cap: "And look at us now… from one Instagram follow to all these memories, we have grown, changed and loved each other through so many chapters. And honestly, I wouldn't want to rewrite a single one.",
+  motion: "final"
+}
 ];
 
 
-const photos=[
+/* =====================================================
+   REAL PHOTOS
+   ===================================================== */
+
+const photos = [
   [
     "photo1.png",
     "Every time I look at this picture, I smile… because even the simplest moments with you mean so much to me."
@@ -122,41 +130,83 @@ const photos=[
 ];
 
 
-function App(){
+/* =====================================================
+   APP
+   ===================================================== */
 
-  const [open,setOpen]=useState(false);
-  const [pass,setPass]=useState("");
-  const [i,setI]=useState(0);
-  const [mode,setMode]=useState("title");
-  const [photo,setPhoto]=useState(0);
-  const [music,setMusic]=useState(false);
+function App() {
+
+  const [open, setOpen] = useState(false);
+  const [pass, setPass] = useState("");
+  const [i, setI] = useState(0);
+  const [mode, setMode] = useState("title");
+  const [photo, setPhoto] = useState(0);
+  const [music, setMusic] = useState(false);
 
 
-  useEffect(()=>{
+  /* ===================================================
+     PRELOAD ALL STORY + REAL PHOTO IMAGES
+     This prevents mobile from showing half-loaded images.
+     =================================================== */
 
-    const a=document.getElementById("music");
+  useEffect(() => {
 
-    if(!a)return;
+    const imageSources = [
+      ...scenes.map(scene => `/story/${scene.img}`),
+      ...photos.map(photo => `/photos/${photo[0]}`)
+    ];
 
-    if(music){
-      a.play().catch(()=>{});
-    }else{
-      a.pause();
+    imageSources.forEach(src => {
+
+      const img = new Image();
+
+      img.src = src;
+
+    });
+
+  }, []);
+
+
+  /* ===================================================
+     MUSIC
+     =================================================== */
+
+  useEffect(() => {
+
+    const audio = document.getElementById("music");
+
+    if (!audio) return;
+
+    if (music) {
+
+      audio.play().catch(() => {});
+
+    } else {
+
+      audio.pause();
+
     }
 
-  },[music]);
+  }, [music]);
 
 
-  if(!open){
+  /* ===================================================
+     SECRET GATE
+     =================================================== */
+
+  if (!open) {
 
     return (
       <Gate
         pass={pass}
         setPass={setPass}
-        onOpen={()=>{
+
+        onOpen={() => {
+
           setOpen(true);
           setMode("title");
           setMusic(true);
+
         }}
       />
     );
@@ -164,38 +214,44 @@ function App(){
   }
 
 
-  const advance=()=>{
+  /* ===================================================
+     NEXT
+     =================================================== */
+
+  const advance = () => {
 
     /* HAPPY 2 YEARS → FILM INTRO */
 
-    if(mode==="title"){
+    if (mode === "title") {
 
       setMode("intro");
 
       return;
+
     }
 
 
     /* FILM INTRO → FIRST SCENE */
 
-    if(mode==="intro"){
+    if (mode === "intro") {
 
       setMode("story");
       setI(0);
 
       return;
+
     }
 
 
     /* STORY */
 
-    if(mode==="story"){
+    if (mode === "story") {
 
-      if(i<scenes.length-1){
+      if (i < scenes.length - 1) {
 
-        setI(i+1);
+        setI(i + 1);
 
-      }else{
+      } else {
 
         setMode("photos");
         setPhoto(0);
@@ -203,56 +259,63 @@ function App(){
       }
 
       return;
+
     }
 
 
     /* REAL PHOTOS */
 
-    if(mode==="photos"){
+    if (mode === "photos") {
 
-      if(photo<photos.length-1){
+      if (photo < photos.length - 1) {
 
-        setPhoto(photo+1);
+        setPhoto(photo + 1);
 
-      }else{
+      } else {
 
         setMode("letter");
 
       }
 
       return;
+
     }
 
 
     /* LETTER → END */
 
-    if(mode==="letter"){
+    if (mode === "letter") {
 
       setMode("end");
 
       return;
+
     }
 
   };
 
 
-  const back=(e)=>{
+  /* ===================================================
+     BACK
+     =================================================== */
+
+  const back = (e) => {
 
     e.stopPropagation();
 
 
     /* STORY → PREVIOUS STORY */
 
-    if(mode==="story" && i>0){
+    if (mode === "story" && i > 0) {
 
-      setI(i-1);
+      setI(i - 1);
 
     }
 
 
     /* FIRST STORY → FILM INTRO */
 
-    else if(mode==="story" && i===0){
+    else if (mode === "story" && i === 0) {
 
       setMode("intro");
 
@@ -261,36 +324,36 @@ function App(){
 
     /* PHOTOS → PREVIOUS PHOTO */
 
-    else if(mode==="photos" && photo>0){
+    else if (mode === "photos" && photo > 0) {
 
-      setPhoto(photo-1);
+      setPhoto(photo - 1);
 
     }
 
 
     /* FIRST PHOTO → LAST STORY */
 
-    else if(mode==="photos" && photo===0){
+    else if (mode === "photos" && photo === 0) {
 
       setMode("story");
-      setI(scenes.length-1);
+      setI(scenes.length - 1);
 
     }
 
 
     /* LETTER → LAST PHOTO */
 
-    else if(mode==="letter"){
+    else if (mode === "letter") {
 
       setMode("photos");
-      setPhoto(photos.length-1);
+      setPhoto(photos.length - 1);
 
     }
 
 
     /* END → LETTER */
 
-    else if(mode==="end"){
+    else if (mode === "end") {
 
       setMode("letter");
 
@@ -299,7 +362,7 @@ function App(){
 
     /* FILM INTRO → ANNIVERSARY TITLE */
 
-    else if(mode==="intro"){
+    else if (mode === "intro") {
 
       setMode("title");
 
@@ -308,24 +371,33 @@ function App(){
   };
 
 
+  /* ===================================================
+     UI
+     =================================================== */
+
   return (
 
-    <div className="movie" onClick={advance}>
+    <div
+      className="movie"
+      onClick={advance}
+    >
 
       <audio
         id="music"
         loop
+        preload="auto"
         src="/music/Ne choopule song piano cover.mp3"
       />
 
 
-      <div className="film-grain"/>
-      <div className="black-vignette"/>
+      <div className="film-grain" />
+
+      <div className="black-vignette" />
 
 
-      {/* HEADER — hidden during title and film intro */}
+      {/* HEADER */}
 
-      {mode!=="title" && mode!=="intro" && (
+      {mode !== "title" && mode !== "intro" && (
 
         <header>
 
@@ -339,17 +411,24 @@ function App(){
           <div className="tools">
 
             <button
-              onClick={e=>{
+              onClick={e => {
+
                 e.stopPropagation();
+
                 setMusic(!music);
+
               }}
             >
-              {music?"MUSIC ON":"MUSIC OFF"}
+
+              {music ? "MUSIC ON" : "MUSIC OFF"}
+
             </button>
 
 
             <button onClick={back}>
+
               BACK
+
             </button>
 
           </div>
@@ -361,17 +440,25 @@ function App(){
 
       {/* ANNIVERSARY TITLE */}
 
-      {mode==="title" && <AnniversaryTitle/>}
+      {mode === "title" && (
+
+        <AnniversaryTitle />
+
+      )}
 
 
-      {/* CINEMATIC FILM INTRO */}
+      {/* FILM INTRO */}
 
-      {mode==="intro" && <FilmIntro/>}
+      {mode === "intro" && (
+
+        <FilmIntro />
+
+      )}
 
 
       {/* STORY */}
 
-      {mode==="story" && (
+      {mode === "story" && (
 
         <Story
           scene={scenes[i]}
@@ -383,39 +470,45 @@ function App(){
 
       {/* REAL PHOTOS */}
 
-      {mode==="photos" && (
+      {mode === "photos" && (
 
-        <Photos n={photo}/>
+        <Photos
+          n={photo}
+        />
 
       )}
 
 
       {/* LETTER */}
 
-      {mode==="letter" && (
+      {mode === "letter" && (
 
-        <Letter/>
+        <Letter />
 
       )}
 
 
       {/* FINAL */}
 
-      {mode==="end" && (
+      {mode === "end" && (
 
-        <End/>
+        <End />
 
       )}
 
 
-      {/* FOOTER — hidden during title and film intro */}
+      {/* FOOTER */}
 
-      {mode!=="title" && mode!=="intro" && (
+      {mode !== "title" && mode !== "intro" && (
 
         <footer>
 
           <span>
-            {mode==="story" ? "OUR STORY" : mode.toUpperCase()}
+
+            {mode === "story"
+              ? "OUR STORY"
+              : mode.toUpperCase()}
+
           </span>
 
 
@@ -424,8 +517,8 @@ function App(){
             <i
               style={{
                 width:
-                  mode==="story"
-                    ? `${((i+1)/11)*100}%`
+                  mode === "story"
+                    ? `${((i + 1) / 11) * 100}%`
                     : "100%"
               }}
             />
@@ -446,12 +539,11 @@ function App(){
 }
 
 
-
 /* =====================================================
    SECRET GATE
    ===================================================== */
 
-function Gate({pass,setPass,onOpen}){
+function Gate({ pass, setPass, onOpen }) {
 
   return (
 
@@ -477,21 +569,28 @@ function Gate({pass,setPass,onOpen}){
         <input
           type="password"
           value={pass}
-          onChange={e=>setPass(e.target.value)}
-          onKeyDown={e=>
-            e.key==="Enter" &&
-            pass==="ab@2218" &&
+
+          onChange={e =>
+            setPass(e.target.value)
+          }
+
+          onKeyDown={e =>
+            e.key === "Enter" &&
+            pass === "ab@2218" &&
             onOpen()
           }
+
           placeholder="secret phrase"
         />
 
 
         <button
-          disabled={pass!=="ab@2218"}
+          disabled={pass !== "ab@2218"}
           onClick={onOpen}
         >
+
           ENTER THE FILM
+
         </button>
 
       </div>
@@ -503,18 +602,17 @@ function Gate({pass,setPass,onOpen}){
 }
 
 
-
 /* =====================================================
    ANNIVERSARY TITLE
    ===================================================== */
 
-function AnniversaryTitle(){
+function AnniversaryTitle() {
 
   return (
 
     <section className="anniversary-title">
 
-      <div className="anniversary-glow"/>
+      <div className="anniversary-glow" />
 
 
       <div className="anniversary-content">
@@ -528,7 +626,7 @@ function AnniversaryTitle(){
 
           Happy 2 Years
 
-          <br/>
+          <br />
 
           <em>
             Bakkamma.
@@ -537,7 +635,7 @@ function AnniversaryTitle(){
         </h1>
 
 
-        <div className="anniversary-divider"/>
+        <div className="anniversary-divider" />
 
 
         <h2>
@@ -580,18 +678,17 @@ function AnniversaryTitle(){
 }
 
 
-
 /* =====================================================
    FILM INTRO
    ===================================================== */
 
-function FilmIntro(){
+function FilmIntro() {
 
   return (
 
     <section className="film-intro">
 
-      <div className="film-intro-glow"/>
+      <div className="film-intro-glow" />
 
 
       <div className="film-intro-content">
@@ -601,14 +698,14 @@ function FilmIntro(){
         </small>
 
 
-        <div className="film-line"/>
+        <div className="film-line" />
 
 
         <h1>
 
           There's a small
 
-          <br/>
+          <br />
 
           <em>
             film of ours.
@@ -621,7 +718,7 @@ function FilmIntro(){
 
           A story made of little moments,
 
-          <br/>
+          <br />
 
           memories, fights, laughter and love.
 
@@ -636,24 +733,26 @@ function FilmIntro(){
 }
 
 
-
 /* =====================================================
    STORY
    ===================================================== */
 
-function Story({scene,n}){
+function Story({ scene, n }) {
 
   /* LAST SCENE — IMAGE ONLY */
 
-  if(n===scenes.length-1){
+  if (n === scenes.length - 1) {
 
     return (
 
       <section className="last-image-only">
 
         <img
-          src={"/story/"+scene.img}
+          src={"/story/" + scene.img}
           alt=""
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
         />
 
       </section>
@@ -673,19 +772,22 @@ function Story({scene,n}){
       <div
         className="bg"
         style={{
-          "--scene-bg":`url(/story/${scene.img})`
+          "--scene-bg": `url(/story/${scene.img})`
         }}
       >
 
         <img
-          src={"/story/"+scene.img}
+          src={"/story/" + scene.img}
           alt=""
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
         />
 
       </div>
 
 
-      <div className="wash"/>
+      <div className="wash" />
 
 
       <div className="copy">
@@ -713,23 +815,22 @@ function Story({scene,n}){
 }
 
 
-
 /* =====================================================
    REAL PHOTOS
    ===================================================== */
 
-function Photos({n}){
+function Photos({ n }) {
 
-  const photoFile=photos[n][0];
+  const photoFile = photos[n][0];
 
   /*
-    Cache-busting query parameter.
-    This helps mobile browsers treat each photo
-    as a separate updated image instead of reusing
-    an older cached image.
+    Separate URL for every photo.
+    This prevents mobile browsers from
+    reusing the previous image.
   */
 
-  const photoSrc=`/photos/${photoFile}?v=${n+1}`;
+  const photoSrc =
+    `/photos/${photoFile}?v=${n + 1}`;
 
 
   return (
@@ -747,7 +848,7 @@ function Photos({n}){
         <div
           className="photo-bg"
           style={{
-            backgroundImage:`url(${photoSrc})`
+            backgroundImage: `url(${photoSrc})`
           }}
         />
 
@@ -756,11 +857,15 @@ function Photos({n}){
           key={photoSrc}
           src={photoSrc}
           alt=""
-          onError={e=>{
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
 
-            e.currentTarget.style.display="none";
+          onError={e => {
 
-            e.currentTarget.nextSibling.style.display="flex";
+            e.currentTarget.style.display = "none";
+
+            e.currentTarget.nextSibling.style.display = "flex";
 
           }}
         />
@@ -786,6 +891,7 @@ function Photos({n}){
 
         </div>
 
+
       </div>
 
 
@@ -800,12 +906,11 @@ function Photos({n}){
 }
 
 
-
 /* =====================================================
    LETTER
    ===================================================== */
 
-function Letter(){
+function Letter() {
 
   return (
 
@@ -869,7 +974,7 @@ function Letter(){
 
           Always yours,
 
-          <br/>
+          <br />
 
           the boy who will keep choosing you.
 
@@ -884,12 +989,11 @@ function Letter(){
 }
 
 
-
 /* =====================================================
    FINAL
    ===================================================== */
 
-function End(){
+function End() {
 
   return (
 
@@ -898,6 +1002,8 @@ function End(){
       <img
         src="/reference.png"
         alt=""
+        loading="eager"
+        decoding="async"
       />
 
 
@@ -912,7 +1018,7 @@ function End(){
 
           Still my favourite person.
 
-          <br/>
+          <br />
 
           Still my favourite story.
 
@@ -937,7 +1043,6 @@ function End(){
 }
 
 
-
 /* =====================================================
    APP START
    ===================================================== */
@@ -945,5 +1050,5 @@ function End(){
 createRoot(
   document.getElementById("root")
 ).render(
-  <App/>
+  <App />
 );
