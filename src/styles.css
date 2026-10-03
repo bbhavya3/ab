@@ -1050,3 +1050,1650 @@ footer{
     margin-top:40px;
   }
 }
+/* MOBILE PHOTO FIX */
+@media (max-width: 700px){
+
+  .photos{
+    padding: 14px 12px;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .photos > small{
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+
+  .realcard{
+    width: 88vw;
+    height: 54vh;
+    padding: 8px;
+    margin: 0 auto;
+  }
+
+  .realcard > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .count{
+    width: 34px;
+    height: 34px;
+    top: 7px;
+    left: 7px;
+    font-size: 10px;
+  }
+
+  .photos h2{
+    font-size: 16px;
+    line-height: 1.35;
+    margin: 12px 10px 0;
+    max-width: 90vw;
+  }
+}
+/* ================================
+   MOBILE PHOTO LAYOUT FIX
+   ================================ */
+
+@media (max-width: 700px) {
+
+  .photos {
+    padding: 14px 12px !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+  }
+
+  .photos > small {
+    margin-top: 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .realcard {
+    width: 88vw !important;
+    height: 54vh !important;
+    padding: 8px !important;
+    margin: 0 auto !important;
+  }
+
+  .realcard > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .count {
+    width: 34px !important;
+    height: 34px !important;
+    top: 7px !important;
+    left: 7px !important;
+    font-size: 10px !important;
+  }
+
+  .photos h2 {
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+    margin: 12px 10px 0 !important;
+    max-width: 90vw !important;
+  }
+}
+/* =====================================================
+   FINAL POLISH — MOBILE + ANNIVERSARY TITLE
+   ===================================================== */
+
+
+/* ---------- ANNIVERSARY TITLE ---------- */
+
+.anniversary-title {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(154, 67, 91, 0.42) 0%,
+      rgba(76, 29, 43, 0.22) 28%,
+      rgba(12, 7, 10, 0.95) 72%
+    ),
+    linear-gradient(
+      135deg,
+      #090709 0%,
+      #170c12 48%,
+      #080608 100%
+    );
+}
+
+
+/* subtle cinematic frame */
+
+.anniversary-title::before {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(255, 210, 220, 0.10);
+  pointer-events: none;
+}
+
+
+/* large background number */
+
+.anniversary-title::after {
+  content: "02";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Playfair Display", serif;
+  font-size: min(42vw, 520px);
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255, 210, 220, 0.025);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+
+/* make title feel more cinematic */
+
+.anniversary-content {
+  position: relative;
+  z-index: 3;
+  padding: 45px 30px;
+  text-align: center;
+}
+
+
+/* little glowing light behind title */
+
+.anniversary-glow {
+  opacity: 1;
+  filter: blur(8px);
+  transform: scale(1.15);
+}
+
+
+/* title hierarchy */
+
+.anniversary-content h1 {
+  text-shadow:
+    0 8px 35px rgba(0,0,0,0.55),
+    0 0 45px rgba(219, 126, 151, 0.12);
+}
+
+.anniversary-content h2 {
+  text-shadow: 0 5px 25px rgba(0,0,0,0.5);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+
+  /* =========================
+     ANNIVERSARY TITLE
+     ========================= */
+
+  .anniversary-title {
+    min-height: 100dvh;
+    padding: 0 18px;
+  }
+
+  .anniversary-title::before {
+    inset: 14px;
+  }
+
+  .anniversary-title::after {
+    font-size: 58vw;
+  }
+
+  .anniversary-content {
+    width: 100%;
+    padding: 20px 12px;
+  }
+
+  .anniversary-content small {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+
+  .anniversary-content h1 {
+    font-size: clamp(42px, 11vw, 58px);
+    line-height: 0.98;
+    margin: 18px 0;
+  }
+
+  .anniversary-content h2 {
+    font-size: 28px;
+    margin-top: 24px;
+  }
+
+  .anniversary-content p {
+    font-size: 14px;
+  }
+
+  .anniversary-years {
+    margin-top: 22px;
+  }
+
+  .title-hint {
+    margin-top: 42px;
+    font-size: 9px;
+    letter-spacing: 4px;
+  }
+
+
+  /* =========================
+     REAL PHOTOS
+     ========================= */
+
+  .photos {
+    min-height: 100dvh;
+    height: 100dvh;
+    box-sizing: border-box;
+    padding: 55px 12px 65px !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+  }
+
+  .photos > small {
+    margin: 0 0 10px !important;
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .realcard {
+    width: 88vw !important;
+    height: 54vh !important;
+    max-height: 520px;
+    padding: 8px !important;
+    margin: 0 auto !important;
+  }
+
+  .realcard > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  .count {
+    width: 34px !important;
+    height: 34px !important;
+    top: 7px !important;
+    left: 7px !important;
+    font-size: 10px !important;
+  }
+
+  .photos h2 {
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+    margin: 12px 10px 0 !important;
+    max-width: 90vw !important;
+  }
+
+
+  /* =========================
+     LETTER — PHONE FIT
+     ========================= */
+
+  .letter {
+    min-height: 100dvh;
+    height: 100dvh;
+    box-sizing: border-box;
+    padding: 72px 12px 70px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+  }
+
+  .letter article {
+    width: 92vw !important;
+    max-width: 92vw !important;
+    min-height: auto !important;
+    max-height: none !important;
+    box-sizing: border-box;
+    padding: 28px 22px !important;
+    margin: 0 auto !important;
+    transform: rotate(0deg) !important;
+  }
+
+  .letter article small {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .letter article h1 {
+    font-size: 29px !important;
+    line-height: 1.08 !important;
+    margin: 14px 0 20px !important;
+  }
+
+  .letter article p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin: 0 0 14px !important;
+  }
+
+  .letter .sign {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    margin-top: 20px !important;
+  }
+
+
+  /* =========================
+     FINAL PAGE — FULL PHOTO
+     ========================= */
+
+  .end {
+    min-height: 100dvh;
+    height: 100dvh;
+    overflow: hidden !important;
+    position: relative;
+  }
+
+  /*
+     Don't use cover on mobile.
+     contain keeps the complete couple photo visible
+     so the boy's face won't be cut.
+  */
+
+  .end > img {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+
+    opacity: 0.42 !important;
+    filter: brightness(0.58) saturate(0.85) !important;
+  }
+
+  .end::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(5,3,5,0.55),
+        rgba(5,3,5,0.20) 45%,
+        rgba(5,3,5,0.78)
+      );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .end > div {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 90vw !important;
+    max-width: 90vw !important;
+    padding: 20px !important;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .end h1 {
+    font-size: clamp(30px, 8.5vw, 46px) !important;
+    line-height: 1.05 !important;
+  }
+
+  .end strong {
+    font-size: clamp(30px, 8vw, 44px) !important;
+  }
+
+  .end p {
+    font-size: 14px !important;
+  }
+}
+/* DESKTOP TITLE RESET */
+@media (min-width: 701px) {
+
+  .anniversary-title {
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .anniversary-title::before {
+    inset: 24px;
+  }
+
+  .anniversary-title::after {
+    display: none;
+  }
+
+  .anniversary-content {
+    padding: 0 30px;
+  }
+
+  .anniversary-content h1 {
+    font-size: 64px;
+  }
+
+  .anniversary-content h2 {
+    font-size: 34px;
+  }
+}
+/* =========================================
+   FILM INTRO - CINEMATIC CENTER
+   ========================================= */
+
+.film-intro {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
+
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(126, 53, 76, 0.30) 0%,
+      rgba(45, 20, 29, 0.18) 32%,
+      rgba(8, 6, 8, 0.98) 78%
+    ) !important;
+
+  z-index: 10;
+}
+
+
+.film-intro::before {
+  content: "";
+  position: absolute;
+
+  inset: 24px;
+
+  border: 1px solid rgba(255, 210, 220, 0.10);
+
+  pointer-events: none;
+}
+
+
+.film-intro-glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: rgba(185, 76, 108, 0.13);
+
+  filter: blur(100px);
+
+  animation: filmGlow 4s ease-in-out infinite alternate;
+
+  pointer-events: none;
+}
+
+
+@keyframes filmGlow {
+
+  from {
+    opacity: .35;
+    transform: translate(-50%, -50%) scale(.85);
+  }
+
+  to {
+    opacity: .75;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+
+}
+
+
+.film-intro-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(850px, 90vw);
+
+  text-align: center;
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  animation: filmIntroIn 1.8s ease forwards;
+}
+
+
+@keyframes filmIntroIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+.film-intro-content small {
+
+  display: block;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 6px;
+
+  color: #cdaeb8;
+
+  margin-bottom: 24px;
+
+  opacity: 0;
+
+  animation: filmSmallIn 1s ease .4s forwards;
+}
+
+
+@keyframes filmSmallIn {
+
+  from {
+    opacity: 0;
+    letter-spacing: 10px;
+  }
+
+  to {
+    opacity: 1;
+    letter-spacing: 6px;
+  }
+
+}
+
+
+.film-line {
+
+  width: 55px;
+  height: 1px;
+
+  margin: 0 auto 28px;
+
+  background: #d99aaa;
+
+  transform: scaleX(0);
+
+  transform-origin: center;
+
+  animation: lineIn 1s ease .8s forwards;
+}
+
+
+@keyframes lineIn {
+
+  to {
+    transform: scaleX(1);
+  }
+
+}
+
+
+.film-intro-content h1 {
+
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(48px, 6vw, 78px);
+
+  line-height: 1.02;
+
+  font-weight: 500;
+
+  color: #f7e9ec;
+
+  text-shadow:
+    0 10px 40px rgba(0,0,0,.5),
+    0 0 40px rgba(220,130,150,.08);
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  animation: filmTitleIn 1.2s ease 1s forwards;
+}
+
+
+@keyframes filmTitleIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+.film-intro-content h1 em {
+
+  color: #dfa0b1;
+
+  font-weight: 400;
+
+}
+
+
+.film-intro-content p {
+
+  margin: 30px 0 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  color: #cbb7bc;
+
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  animation: filmParagraphIn 1.2s ease 1.6s forwards;
+}
+
+
+@keyframes filmParagraphIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .film-intro {
+    width: 100vw !important;
+    height: 100dvh !important;
+  }
+
+  .film-intro::before {
+    inset: 14px;
+  }
+
+  .film-intro-content {
+    width: 88vw;
+  }
+
+  .film-intro-content small {
+    font-size: 9px;
+    letter-spacing: 4px;
+  }
+
+  .film-intro-content h1 {
+    font-size: clamp(40px, 11vw, 56px);
+    line-height: 1.04;
+  }
+
+  .film-intro-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 24px;
+  }
+
+  .film-intro-glow {
+    width: 280px;
+    height: 280px;
+  }
+
+}
+/* =========================================================
+   CINEMATIC ANNIVERSARY OPENING — FINAL TITLE DESIGN
+   ========================================================= */
+
+.anniversary-title {
+  position: relative !important;
+  width: 100% !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 38%,
+      rgba(190, 73, 105, 0.38) 0%,
+      rgba(105, 38, 61, 0.28) 22%,
+      rgba(35, 15, 25, 0.70) 48%,
+      #070608 82%
+    ) !important;
+}
+
+
+/* ---------------------------------------------------------
+   CINEMATIC LIGHT SOURCES
+   --------------------------------------------------------- */
+
+.anniversary-title::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+
+  background:
+    radial-gradient(
+      ellipse at 20% 30%,
+      rgba(231, 132, 157, 0.16) 0%,
+      transparent 30%
+    ),
+    radial-gradient(
+      ellipse at 82% 22%,
+      rgba(181, 91, 125, 0.14) 0%,
+      transparent 28%
+    ),
+    radial-gradient(
+      ellipse at 52% 80%,
+      rgba(120, 49, 76, 0.20) 0%,
+      transparent 32%
+    );
+
+  filter: blur(25px);
+
+  animation: cinematicLights 10s ease-in-out infinite alternate;
+
+  pointer-events: none;
+}
+
+
+@keyframes cinematicLights {
+
+  0% {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(2%, 2%, 0) scale(1.06);
+  }
+
+  100% {
+    transform: translate3d(-1%, 3%, 0) scale(1.02);
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOVING LIGHT LEAK
+   --------------------------------------------------------- */
+
+.anniversary-title::after {
+  content: "";
+
+  position: absolute;
+
+  width: 75vw;
+  height: 160vh;
+
+  top: -35%;
+  left: -65%;
+
+  background:
+    linear-gradient(
+      105deg,
+      transparent 38%,
+      rgba(255, 157, 181, 0.06) 47%,
+      rgba(255, 194, 208, 0.13) 50%,
+      rgba(255, 157, 181, 0.05) 53%,
+      transparent 62%
+    );
+
+  transform: rotate(12deg);
+
+  filter: blur(10px);
+
+  animation: lightSweep 12s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+
+@keyframes lightSweep {
+
+  0% {
+    left: -75%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  50% {
+    left: 70%;
+    opacity: .65;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   GLOW BEHIND TITLE
+   --------------------------------------------------------- */
+
+.anniversary-glow {
+  position: absolute !important;
+
+  width: 520px !important;
+  height: 520px !important;
+
+  left: 50% !important;
+  top: 47% !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(218, 93, 126, 0.24) 0%,
+      rgba(166, 58, 91, 0.12) 32%,
+      transparent 70%
+    );
+
+  filter: blur(30px);
+
+  animation: titleGlow 5s ease-in-out infinite alternate;
+
+  pointer-events: none;
+}
+
+
+@keyframes titleGlow {
+
+  from {
+    opacity: .55;
+    transform: translate(-50%, -50%) scale(.88);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   FILM FRAME
+   --------------------------------------------------------- */
+
+.anniversary-title > .anniversary-content {
+  position: relative !important;
+  z-index: 5 !important;
+
+  width: min(1000px, 90vw);
+
+  min-height: 560px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1.6fr 1fr;
+
+  grid-template-rows:
+    auto
+    auto
+    auto
+    auto
+    auto;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 55px 35px;
+
+  box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   DATE
+   --------------------------------------------------------- */
+
+.anniversary-content > small {
+  grid-column: 1 / 4;
+  grid-row: 1;
+
+  align-self: start;
+
+  margin-bottom: 15px;
+
+  font-size: 10px;
+
+  letter-spacing: 6px;
+
+  color: rgba(244, 211, 219, .72);
+}
+
+
+/* ---------------------------------------------------------
+   MAIN TITLE
+   --------------------------------------------------------- */
+
+.anniversary-content > h1 {
+  grid-column: 1 / 4;
+  grid-row: 2;
+
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(62px, 7vw, 105px);
+
+  line-height: .88;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+
+  color: #fff3f5;
+
+  text-shadow:
+    0 8px 40px rgba(0,0,0,.65),
+    0 0 50px rgba(225,115,145,.12);
+}
+
+
+/* Bakkamma */
+
+.anniversary-content > h1 em {
+  display: inline-block;
+
+  margin-top: 14px;
+
+  font-size: .72em;
+
+  font-weight: 400;
+
+  color: #e9a6b7;
+
+  text-shadow:
+    0 8px 35px rgba(204,91,123,.25);
+}
+
+
+/* ---------------------------------------------------------
+   DIVIDER
+   --------------------------------------------------------- */
+
+.anniversary-divider {
+  grid-column: 1 / 4;
+  grid-row: 3;
+
+  width: 90px !important;
+  height: 1px;
+
+  margin: 22px auto !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #d995a6,
+      transparent
+    );
+
+  box-shadow:
+    0 0 15px rgba(221,130,154,.35);
+}
+
+
+/* ---------------------------------------------------------
+   2 YEARS OF LOVE
+   --------------------------------------------------------- */
+
+.anniversary-content > h2 {
+  grid-column: 2;
+  grid-row: 4;
+
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 38px;
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  color: #edb4c1;
+
+  text-shadow:
+    0 5px 30px rgba(210,105,135,.20);
+}
+
+
+/* ---------------------------------------------------------
+   FRIENDSHIP
+   --------------------------------------------------------- */
+
+.anniversary-content > p {
+  grid-column: 2;
+  grid-row: 5;
+
+  margin: 6px 0 0;
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+
+  color: rgba(232,210,216,.72);
+}
+
+
+/* ---------------------------------------------------------
+   YEARS — LEFT / RIGHT DETAIL
+   --------------------------------------------------------- */
+
+.anniversary-years {
+  position: absolute;
+
+  left: 35px;
+  bottom: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  color: rgba(226,191,200,.58);
+}
+
+
+.anniversary-years i {
+  font-style: normal;
+
+  font-size: 16px;
+
+  color: #d995a6;
+}
+
+
+/* ---------------------------------------------------------
+   STORY BEGINS — RIGHT DETAIL
+   --------------------------------------------------------- */
+
+.title-hint {
+  position: absolute;
+
+  right: 35px;
+  bottom: 66px;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+
+  color: rgba(226,191,200,.40);
+}
+
+
+/* ---------------------------------------------------------
+   CINEMATIC BORDER
+   --------------------------------------------------------- */
+
+.anniversary-content::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border: 1px solid rgba(255,218,226,.08);
+
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   FILM GRAIN
+   --------------------------------------------------------- */
+
+.anniversary-title .anniversary-content::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    repeating-radial-gradient(
+      circle at 20% 30%,
+      rgba(255,255,255,.025) 0,
+      rgba(255,255,255,.025) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+
+  opacity: .16;
+
+  mix-blend-mode: overlay;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TEXT FADE-IN
+   ========================================================= */
+
+.anniversary-content > * {
+  opacity: 0;
+
+  animation:
+    cinematicTextIn 1.3s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+
+.anniversary-content > small {
+  animation-delay: .25s;
+}
+
+
+.anniversary-content > h1 {
+  animation-delay: .65s;
+}
+
+
+.anniversary-content > .anniversary-divider {
+  animation-delay: 1.15s;
+}
+
+
+.anniversary-content > h2 {
+  animation-delay: 1.45s;
+}
+
+
+.anniversary-content > p {
+  animation-delay: 1.75s;
+}
+
+
+.anniversary-years {
+  animation-delay: 2s;
+}
+
+
+.title-hint {
+  animation-delay: 2.25s;
+}
+
+
+@keyframes cinematicTextIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(28px)
+      scale(.98);
+
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+    filter: blur(0);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .anniversary-title {
+    min-height: 100dvh !important;
+    height: 100dvh !important;
+  }
+
+
+  .anniversary-title > .anniversary-content {
+    width: 92vw;
+
+    min-height: 560px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 35px 18px;
+  }
+
+
+  .anniversary-content > small {
+    margin-bottom: 22px;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+  }
+
+
+  .anniversary-content > h1 {
+    font-size: clamp(48px, 13vw, 68px);
+
+    line-height: .91;
+
+    letter-spacing: -1px;
+  }
+
+
+  .anniversary-content > h1 em {
+    margin-top: 12px;
+
+    font-size: .72em;
+  }
+
+
+  .anniversary-divider {
+    width: 70px !important;
+
+    margin: 25px auto !important;
+  }
+
+
+  .anniversary-content > h2 {
+    font-size: 29px;
+
+    margin-top: 0;
+  }
+
+
+  .anniversary-content > p {
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    margin-top: 7px;
+  }
+
+
+  .anniversary-years {
+    position: static;
+
+    margin-top: 32px;
+
+    font-size: 9px;
+
+    gap: 13px;
+  }
+
+
+  .title-hint {
+    position: static;
+
+    margin-top: 48px;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+  }
+
+
+  .anniversary-glow {
+    width: 330px !important;
+    height: 330px !important;
+  }
+
+
+  .anniversary-title::before {
+    inset: -10%;
+
+    filter: blur(18px);
+  }
+
+
+  .anniversary-title::after {
+    width: 130vw;
+  }
+
+}
+/* =========================================================
+   FALLING HEARTS — MORE VISIBLE CINEMATIC VERSION
+   ========================================================= */
+
+.anniversary-title .anniversary-content::after {
+  content:
+    "♥    ♡        ♥          ♡     ♥       ♡          ♥"
+    "      ♡       ♥     ♡          ♥        ♡       ♥"
+    "♥         ♡        ♥      ♡          ♥        ♡"
+    "    ♥       ♡          ♥       ♡          ♥";
+
+  position: absolute;
+
+  left: -15%;
+  top: -180px;
+
+  width: 130%;
+  height: 150%;
+
+  color: rgba(244, 157, 180, 0.72);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 16px;
+
+  letter-spacing: 28px;
+
+  line-height: 105px;
+
+  white-space: pre-wrap;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  animation: heartsFall 10s linear infinite;
+}
+
+
+/* SECOND HEART LAYER */
+
+.anniversary-title .anniversary-glow::after {
+  content:
+    "♡       ♥       ♡          ♥       ♡       ♥"
+    "       ♥        ♡       ♥        ♡          ♥"
+    "♡          ♥        ♡        ♥       ♡"
+    "    ♥          ♡       ♥          ♡       ♥";
+
+  position: absolute;
+
+  left: -20%;
+  top: -220px;
+
+  width: 140%;
+  height: 160%;
+
+  color: rgba(255, 181, 199, 0.48);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 38px;
+
+  line-height: 125px;
+
+  white-space: pre-wrap;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  animation: heartsFallSecond 14s linear infinite;
+
+}
+
+
+/* BIGGER FLOATING HEARTS */
+
+.anniversary-title .anniversary-glow::before {
+  content:
+    "♥       ♡              ♥"
+    "        ♡       ♥              ♡"
+    "♥              ♡        ♥";
+
+  position: absolute;
+
+  left: -10%;
+  top: -250px;
+
+  width: 120%;
+  height: 160%;
+
+  color: rgba(239, 137, 164, 0.28);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 22px;
+
+  letter-spacing: 55px;
+
+  line-height: 170px;
+
+  white-space: pre-wrap;
+
+  pointer-events: none;
+
+  animation: heartsBigFall 18s linear infinite;
+
+}
+
+
+/* =========================================================
+   HEART ANIMATIONS
+   ========================================================= */
+
+@keyframes heartsFall {
+
+  0% {
+    transform: translateY(-180px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: .75;
+  }
+
+  45% {
+    transform: translateY(350px) translateX(25px) rotate(8deg);
+    opacity: .65;
+  }
+
+  75% {
+    opacity: .45;
+  }
+
+  100% {
+    transform: translateY(850px) translateX(-30px) rotate(-10deg);
+    opacity: 0;
+  }
+
+}
+
+
+@keyframes heartsFallSecond {
+
+  0% {
+    transform: translateY(-200px) translateX(20px) rotate(-5deg);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: .55;
+  }
+
+  50% {
+    transform: translateY(360px) translateX(-35px) rotate(8deg);
+    opacity: .45;
+  }
+
+  100% {
+    transform: translateY(900px) translateX(35px) rotate(-8deg);
+    opacity: 0;
+  }
+
+}
+
+
+@keyframes heartsBigFall {
+
+  0% {
+    transform: translateY(-250px) translateX(-20px) rotate(0deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: .38;
+  }
+
+  50% {
+    transform: translateY(330px) translateX(45px) rotate(12deg);
+    opacity: .30;
+  }
+
+  100% {
+    transform: translateY(920px) translateX(-45px) rotate(-12deg);
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .anniversary-title .anniversary-content::after {
+    font-size: 13px;
+    letter-spacing: 21px;
+    line-height: 82px;
+  }
+
+  .anniversary-title .anniversary-glow::after {
+    font-size: 9px;
+    letter-spacing: 28px;
+    line-height: 100px;
+  }
+
+  .anniversary-title .anniversary-glow::before {
+    font-size: 17px;
+    letter-spacing: 38px;
+    line-height: 140px;
+  }
+
+}
+.last-image-only img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .last-image-only img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+.scene-no,
+.count {
+  display: none !important;
+}
+
+
+/* LAST SCENE — CLEAN IMAGE ONLY */
+
+.last-image-only {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #050405;
+  z-index: 5;
+}
+
+.last-image-only img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+@media (max-width: 700px) {
+
+  .last-image-only {
+    width: 100vw;
+    height: 100dvh;
+  }
+
+  .last-image-only img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+}
